@@ -81,14 +81,17 @@
             </nav>
 
             <div class="message d-flex flex-column align-items-md-end">
-                <div class="sent m-3 py-4 text-black-50" v-for="messages in contacts" :key="message">
-                    {{ message }} 
-
-                </div>
                 
+                <div class="sent m-3 py-4 text-black-50">
+                    <ul>
+                        <li v-for="(message) in contact(activeIndex)" :key="message.messages">
+                        {{ message.messages }}
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            
+
             <footer class="d-flex justify-content-around py-3 align-items-center">
                 <a href="#"><i class="fa-regular fa-face-smile" style="color: #808080;"></i></a>
                 <input type="text" name="text-area" id="text-area" class="py-2 px-3"placeholder="Scrivi un messaggio">

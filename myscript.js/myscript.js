@@ -201,10 +201,8 @@ createApp({
                 };
         this.contacts.push(newElement);
         },
-
-        selectContact(contact) {
-            this.selectedContact = contact;
-        }
+        activeIndex: 0,
+        
 
         }
     }).mount('#app');
