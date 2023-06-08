@@ -52,7 +52,7 @@
 
 
             <ul>
-                <li class="px-2 py-2 "v-for="contact in contacts" :key="contact.name" :class="{ 'selected': contact === selectedContact }" @click="selectContact(contact)">
+                <li class="px-2 py-2 "v-for="contact in contacts" :key="contact.name" :class="{ 'selected': contact === selectedContact }" @click="selectContact(contact)" @click="setActiveContact(contact.id)">
 
                     <img :src="contact.avatar" :key="contact.avatar" class="mx-2">
 
@@ -80,13 +80,13 @@
                 </div>             
             </nav>
 
-            <div class="message d-flex flex-column align-items-md-end">
+            <div class="message d-flex flex-column align-items-end">
                 
-                <div class="sent m-3 py-4 text-black-50">
-                    <ul>
-                        
+                    <ul class="mx-5 px-2">
+                        <li class="text sent my-4"v-for="(text) in contacts[activeIndex].messages">
+                        {{ text.message }}
+                        </li>
                     </ul>
-                </div>
             </div>
 
 

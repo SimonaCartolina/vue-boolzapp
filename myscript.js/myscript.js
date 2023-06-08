@@ -168,7 +168,8 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            activeIndex: 0,
             
 
         }
@@ -201,8 +202,9 @@ createApp({
                 };
         this.contacts.push(newElement);
         },
-        activeIndex: 0,
-        
+        selectContact(contact) {
+            this.selectedContact = contact;
+        },
 
         }
     }).mount('#app');

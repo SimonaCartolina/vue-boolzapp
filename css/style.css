@@ -86,12 +86,12 @@ input{
 /*create two classes, green and white for sent and received messages*/
 .sent,
 .received{
-    padding:0.50rem;
-    border-radius:10px;
+
+    color:black;
 }
 .sent{
     background-color: #D5F9BB;
-    width:30%;
+    width:100%;
 }
 .received{
     background-color: white;
@@ -158,7 +158,6 @@ ul{
 }
 li{
     list-style:none;
-    height:calc(92vh / 10);
     border:0.1px solid rgb(240, 238, 238);
 }
 .li-blue{
@@ -196,12 +195,12 @@ input{
 /*create two classes, green and white for sent and received messages*/
 .sent,
 .received{
+    height:40px;
     padding:0.50rem;
     border-radius:10px;
 }
 .sent{
-    background-color: #D5F9BB;
-    width:30%;
+    background-color: #D9FDD3;
 }
 .received{
     background-color: white;
@@ -218,4 +217,7 @@ input{
     width:3.2rem;
     height:3.2rem;
     border-radius:50%;
+}
+.text{
+    font-size:0.90rem;
 }
