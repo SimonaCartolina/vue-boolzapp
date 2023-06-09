@@ -52,7 +52,7 @@
 
 
             <ul>
-                <li class="px-2 py-2 "v-for="(contact, index) in contacts" :key="contact.name" :class="{ 'selected': contact === selectedContact }" @click="selectContact(contact)">
+                <li @click="changeIndex(index)" class="px-2 py-2 "v-for="(contact, index) in contacts" :key="contact.name" :class="{ 'selected': contact === selectedContact }">
 
                     <img :src="contact.avatar" :key="contact.avatar" class="mx-2">
 
@@ -91,7 +91,7 @@
 
             <div class="conversation clearfix d-flex flex-column px-2">
                 
-                        <div class="text sent my-4" v-for="(text, index) in contacts[activeIndex].messages" @click="changeIndex(index)"
+                        <div class="text sent my-4" v-for="(text, index) in contacts[activeIndex].messages"
                         :class="(text.status=='sent' ? 'sent' : 'received' )">
                         {{ text.message }}
                         </div>
