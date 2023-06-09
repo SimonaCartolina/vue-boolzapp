@@ -5,6 +5,8 @@ createApp({
         return {
 
             selectedContact: null,
+            newMessage: {},
+            
 
             contacts: [
                 {
@@ -204,12 +206,19 @@ createApp({
         },
         selectContact(contact) {
             this.selectedContact = contact;
+
         },
         changeIndex(index) {
             this.activeIndex=index;
-        }
-
-        }
+        },
+        addMessage(newMessage) {
+            if (this.newMessage !== '') {
+                this.messages.push(this.newMessage);
+                this.newMessage='';
+            }
+            }
+        },
+        
     }).mount('#app');
 
 
