@@ -4,8 +4,8 @@ createApp({
     data() {
         return {
 
-            selectedContact: null,
-            newMessage: {},
+            newMessage: {message:'',
+            status: 'sent'},
             
 
             contacts: [
@@ -204,17 +204,14 @@ createApp({
                 };
         this.contacts.push(newElement);
         },
-        selectContact(contact) {
-            this.selectedContact = contact;
 
-        },
         changeIndex(index) {
             this.activeIndex=index;
         },
+
         addMessage(newMessage) {
-            if (this.newMessage !== '') {
-                this.messages.push(this.newMessage);
-                this.newMessage='';
+            if (this.newMessage.message !== '') {
+                this.contacts[this.activeIndex].messages.push(this.newMessage);
             }
             }
         },

@@ -52,7 +52,8 @@
 
 
             <ul>
-                <li @click="changeIndex(index)" class="px-2 py-2 "v-for="(contact, index) in contacts" :key="contact.name" :class=" selectedContact=== contact ? 'selected' : '' ">
+                <li @click="changeIndex(index)" class="px-2 py-2 "v-for="(contact, index) in contacts" 
+                :key="contact.name" :class=" activeIndex===index ? 'selected' : '' ">
 
                     <img :src="contact.avatar" :key="contact.avatar" class="mx-2">
 
@@ -101,7 +102,7 @@
 
             <footer class="d-flex justify-content-around py-3 align-items-center">
                 <a href="#"><i class="fa-regular fa-face-smile" style="color: #808080;"></i></a>
-                <input type="text" v-model="newMessage" @keyup.enter="addMessage(newMessage)" name="text-area" id="text-area" class="py-2 px-3"placeholder="Scrivi un messaggio">
+                <input type="text" v-model="newMessage.message" @keyup.enter="addMessage(newMessage)" name="text-area" id="text-area" class="py-2 px-3"placeholder="Scrivi un messaggio">
                 <a href="#"><i class="fa-solid fa-microphone" style="color: #808080;"></i></a>
             </footer>
         </div>
