@@ -4,8 +4,15 @@ createApp({
     data() {
         return {
 
-            newMessage: {message:'',
-            status: 'sent'},
+            newMessage: {
+                message:'',
+                status: 'sent'
+            },
+
+            newMessageReceived:{
+                message:'',
+                status:'received'
+            },
             
 
             contacts: [
@@ -212,7 +219,11 @@ createApp({
         addMessage(newMessage) {
             if (this.newMessage.message !== '') {
                 this.contacts[this.activeIndex].messages.push(this.newMessage);
-                this.newMessage.message==='';
+                setTimeout()
+
+            } {
+                this.newMessage.message='';
+                alert('write a message')
             }
             }
         },
