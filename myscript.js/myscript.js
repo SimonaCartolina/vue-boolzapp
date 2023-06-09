@@ -212,6 +212,7 @@ createApp({
         addMessage(newMessage) {
             if (this.newMessage.message !== '') {
                 this.contacts[this.activeIndex].messages.push(this.newMessage);
+                this.newMessage.message==='';
             }
             }
         },
