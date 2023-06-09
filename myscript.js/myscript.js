@@ -144,7 +144,7 @@ createApp({
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
                             status: 'received'
                         }
-                    ],
+                    ]
                 },
                 {
                     name: 'Anna',
@@ -205,6 +205,9 @@ createApp({
         selectContact(contact) {
             this.selectedContact = contact;
         },
+        changeIndex(index) {
+            this.activeIndex=index;
+        }
 
         }
     }).mount('#app');
