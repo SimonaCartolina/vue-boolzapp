@@ -6,13 +6,15 @@ createApp({
 
             newMessage: {
                 message:'',
-                status: 'sent'
+                status: 'sent',
             },
 
-            newMessageReceived:{
-                message:'',
-                status:'received'
+            messageReceived: {
+                message:'Ok, sono felice per te :)',
+                status: 'received',
+
             },
+
             
 
             contacts: [
@@ -216,19 +218,22 @@ createApp({
             this.activeIndex=index;
         },
 
+        receiveMessage(messageReceived){
+            this.contacts[this.activeIndex].messages.push(this.messageReceived);
+        },
+
         addMessage(newMessage) {
             if (this.newMessage.message !== '') {
                 this.contacts[this.activeIndex].messages.push(this.newMessage);
-                setTimeout()
+                let timeTimer= setTimeout(this.receiveMessage, 1000);
 
-            } {
-                this.newMessage.message='';
-                alert('write a message')
+            } else{
+                alert('Type a message')
             }
-            }
-        },
+            
+        }
         
-    }).mount('#app');
+    }}).mount('#app');
 
 
 /*Milestone 2
