@@ -46,13 +46,14 @@
                 <div class="addcontact px-3 py-1">
                     <i @click="addNewElement" class="fa-solid fa-plus" style="color: #808080;"></i>
                     <i  class="fa-solid fa-magnifying-glass" style="color: #808080;"></i>
-                    <input class="py-2 px-2 my-1"placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup.enter="selectContact" v-model="searchedWord" class="py-2 px-2 my-1"placeholder="Cerca o inizia una nuova chat">
+                    <label v-for="contact in filterWords(contact, text)">{{ contact.name }}</label>
                 </div>
 
 
 
             <ul>
-                <li @click="changeIndex(index)" class="px-2 py-2 "v-for="(contact, index) in contacts" 
+                <li @click="changeIndex(index)" class="px-2 py-2 "v-for="(contact, index) in contacts"
                 :key="contact.name" :class=" activeIndex===index ? 'selected' : '' ">
 
                     <img :src="contact.avatar" :key="contact.avatar" class="mx-2">

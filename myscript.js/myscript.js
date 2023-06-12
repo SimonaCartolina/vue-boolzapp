@@ -2,19 +2,24 @@ const{createApp}=Vue;
 
 createApp({
     data() {
+
+
         return {
 
+            
             newMessage: {
                 message:'',
                 status: 'sent',
             },
-
+            
             messageReceived: {
                 message:'Ok, sono felice per te :)',
                 status: 'received',
-
+                
             },
-
+            
+            selectedContact: null,
+            searchedWord: '',
             
 
             contacts: [
@@ -186,6 +191,7 @@ createApp({
         }
     },
     methods: {
+
         
         addNewElement() {
 
@@ -230,12 +236,16 @@ createApp({
             } else{
                 alert('Type a message')
             }
-            
-        }
-        
-    }}).mount('#app');
+        },
+        filterWords(contact, text) {
+            return this.contacts.filter(contact =>
+            contact.name.toLowerCase().includes(this.searchedWord.toLowerCase())
+            )},
+
+        selectContact(contact) {
+                this.activeIndex=this.searchedWord;
+                
+            }
 
 
-/*Milestone 2
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato.*/
+}}).mount('#app');
